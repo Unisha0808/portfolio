@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unisha Daga | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0c0616;
+      --card:#120f1e;
+      --muted:#d9d2e9;
+      --accent:#ff69b4;
+      --accent-2:#b97aff;
+      --glass:rgba(255,255,255,0.08);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui;
+      color:#f7ecff;
+      overflow-x:hidden;
+
+      /* 🌸 Abstract Wavy Gradient Background */
+      background:
+        linear-gradient(135deg, #2b0b3a 0%, #3c0c36 45%, #4a0c29 100%),
+        url('https://i.ibb.co/0F8H5dF/gradient-waves.png');
+      background-size:cover;
+      background-attachment:fixed;
+      animation:bgShift 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgShift{
+      0%{background-position: left top;}
+      100%{background-position: right bottom;}
+    }
+
+    .wrap{max-width:1100px;margin:auto;padding:28px}
+
+    /* header */
+    header{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-bottom:24px;
+    }
+    .logo{display:flex;align-items:center;gap:12px;font-weight:700}
+    .logo .initial{
+      width:42px;height:42px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      color:#111;font-weight:800;font-size:18px;
+      box-shadow:0 0 15px rgba(255,105,180,0.4);
+    }
+    nav{display:flex;gap:20px}
+    nav a{
+      font-size:14px;color:var(--muted);padding:6px 10px;border-radius:8px;
+      transition:0.3s;
+    }
+    nav a:hover{background:var(--glass);color:#fff}
+    .hamburger{display:none;color:#fff;font-size:24px;background:none;border:0}
+
+    /* hero */
+    .hero{
+  display:grid;
+  grid-template-columns:1fr 300px; /* intro on left, avatar on right */
+  padding:36px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 0 30px rgba(255,105,180,0.14);
+  gap:30px;
+  align-items:center;
+  animation:fadeUp 1s ease forwards;
+}
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(30px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    .intro h1{font-size:44px;margin:6px 0;color:#fff;text-shadow:0 0 18px rgba(255,105,180,0.4);}
+    .intro h2{color:#e7d8ff;font-weight:600;margin:0 0 14px}
+    .intro h4{color:var(--accent);margin:0;font-weight:600;}
+    .cta{display:flex;gap:14px;margin-top:20px}
+    .btn{
+      padding:12px 18px;border-radius:8px;font-weight:600;cursor:pointer;
+      transition:.3s;border:1px solid transparent;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#111;box-shadow:0 0 18px rgba(255,105,180,0.4);
+    }
+    .btn-primary:hover{transform:translateY(-4px)}
+    .btn-ghost{
+      background:transparent;color:var(--muted);
+      border:1px solid rgba(255,255,255,0.12)
+    }
+    .btn-ghost:hover{
+      background:rgba(255,255,255,0.05);
+      color:#fff;
+      transform:translateY(-4px)
+    }
+
+    /* skills */
+    .skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+  justify-content:flex-start;
+}
+    .skill-chip {
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:13px;
+  background:rgba(255,105,180,0.12);
+  border:1px solid rgba(255,105,180,0.22);
+  transition:0.3s; /* smooth hover transition */
+  cursor:default;
+}
+
+.skill-chip:hover {
+  background:linear-gradient(135deg, var(--accent), var(--accent-2));
+  color:#111;
+  transform:scale(1.1); /* slight zoom */
+  border-color:rgba(255,105,180,0.4);
+}
+
+    /* avatar */
+    .avatar-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  text-align:center;
+}
+    .avatar{
+      width:260px;height:260px;border-radius:50%;overflow:hidden;
+      border:6px solid rgba(255,105,180,0.35);
+      box-shadow:0 0 30px rgba(255,105,180,0.28);
+      margin:auto;
+      animation:glow 6s infinite alternate ease-in-out;
+    }
+    @keyframes glow{
+      0%{box-shadow:0 0 22px rgba(255,105,180,0.25);}
+      100%{box-shadow:0 0 48px rgba(185,122,255,0.35);}
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+
+    .socials{
+      display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;justify-content:center;
+    }
+    .socials a{
+      padding:8px 10px;border-radius:8px;font-size:13px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.12);
+      color:var(--muted);
+      transition:0.3s;
+      box-shadow:0 0 8px rgba(255,105,180,0.15);
+    }
+    .socials a:hover{
+      background:linear-gradient(90deg, rgba(255,105,180,0.18), rgba(185,122,255,0.18));
+      color:#fff;transform:translateY(-4px);
+    }
+
+    /* about */
+    section.about{
+    margin-top:30px;
+    padding:28px;
+    border-radius:16px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
+    }
+    section.about:hover{
+    transform:translateY(-6px) scale(1.01);
+    box-shadow:0 0 28px rgba(255,105,180,0.22);
+    }
+
+/* Experience Section */
+  .experience{
+  margin-top:34px;
+  padding:28px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+}
+  .experience:hover{
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 0 28px rgba(255,105,180,0.22);
+}
+
+  .exp-list{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+  .exp-card{
+  background:rgba(255,255,255,0.05);
+  padding:18px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+}
+  .exp-card:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 0 25px rgba(255,105,180,0.25);
+}
+
+  .exp-card h4{
+  color:#fff;
+  margin-bottom:6px;
+}
+
+  .exp-card p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+}
+
+.exp-duration{
+  display:block;
+  margin-top:10px;
+  font-size:12px;
+  color:#ffbdf2;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .avatar-wrap{
+    margin-top:20px;
+  }
+  .skills{
+    justify-content:center;
+  }
+}
+
+/* projects */
+    .projects{margin-top:34px}
+    .proj-list{margin: 10px 20px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .proj{
+      background:rgba(255,255,255,0.05);
+      padding:18px;border-radius:14px;
+      border:1px solid rgba(255,255,255,0.08);
+      transition:.3s;
+    }
+    .proj:hover{
+      transform:translateY(-6px) scale(1.02);
+      box-shadow:0 0 28px rgba(255,105,180,0.22);
+    }
+    .proj-links{
+  margin-top:10px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.proj-btn{
+  padding:8px 12px;
+  font-size:13px;
+  border-radius:6px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.12);
+  transition:0.25s;
+  color: #fff;
+}
+.proj-btn:hover{
+  background:var(--accent);
+  color:#111;
+  transform:translateY(-3px);
+}
+
+/* contact */
+    #contact{
+    background:rgba(255,255,255,0.05);
+    padding:26px;
+    border-radius:16px;
+    margin-top:30px;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;   
+    }
+
+    #contact:hover{
+    transform:translateY(-6px) scale(1.01);
+    box-shadow:0 0 28px rgba(255,105,180,0.22);
+    }
+
+    footer{text-align:center;margin-top:40px;color:var(--muted);padding:20px}
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;text-align:center}
+      nav{display:none}
+      .proj-list{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header>
+  <div class="logo">
+    <div class="initial">UD</div>
+    <div>Unisha Daga</div>
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="#experience">Experience</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="intro">
+    <h4>Hello 🌸</h4>
+    <h1>I'm Unisha</h1>
+    <h2>Cybersecurity Student & Frontend Developer</h2>
+
+    <div class="cta">
+      <a class="btn btn-primary" href="#contact">Work With Me</a>
+      <a class="btn btn-ghost" href="#" target="_blank">My Resume</a>
+    </div>
+
+    <div class="skills">
+      <div class="skill-chip">C/C++</div>
+      <div class="skill-chip">Java</div>
+      <div class="skill-chip">JavaScript</div>
+      <div class="skill-chip">Python</div>
+      <div class="skill-chip">Cybersecurity</div>
+      <div class="skill-chip">Cyber tools</div>
+      <div class="skill-chip">Web Development</div>
+      <div class="skill-chip">MySQL/SQL</div>
+      <div class="skill-chip">DSA/Oops</div>
+      <div class="skill-chip">Forensics</div>
+      <div class="skill-chip">Git</div>
+      <div class="skill-chip">GitHub</div>
+      <div class="skill-chip">UI/UX Designer</div>
+      <div class="skill-chip">Canvas</div>
+      <div class="skill-chip">Problem-Solving</div>
+      <div class="skill-chip">Leadership</div>
+      <div class="skill-chip">Communication</div>
+      <div class="skill-chip">Networking</div>
+    </div>
+  </div>
+
+  <div class="avatar-wrap">
+    <div class="avatar">
+      <img src="new photo.jpg" alt="Unisha Daga">
+    </div>
+
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/unisha-daga-a46351297/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Unisha0808" target="_blank">GitHub</a>
+      <a href="https://leetcode.com/u/HF0SiO3OW5/" target="_blank">LeetCode</a>
+      <a href="https://www.geeksforgeeks.org/profile/unishadq3gb" target="_blank">GFG</a>
+      <a href="https://www.hackerrank.com/profile/unishadaga08" target="_blank">HackerRank</a>
+      <a href="https://codeforces.com/profile/unishadaga08" target="_blank">CodeForces</a>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <h3>About Me</h3>
+  <p>I am a passionate Computer Science Engineering (Cybersecurity) student with hands-on experience in web development, cybersecurity, and forensic analysis. I aim to work in challenging environments and build secure, scalable solutions.</p>
+</section>
+
+<!-- Experience -->
+<section class="experience" id="experience">
+  <h3 style="color:#fff;">Experience</h3>
+
+  <div class="exp-list">
+
+    <div class="exp-card">
+      <h4>Cybersecurity Intern – CDAC Noida</h4>
+      <p>Worked on Ethical Hacking, Penetration Testing, and Cyber Kill Chain techniques. Performed enumeration, exploitation, and forensic analysis tasks.</p>
+      <span class="exp-duration">Jun 2024 – Aug 2024</span>
+    </div>
+
+    <div class="exp-card">
+      <h4>Frontend Development Intern – Devtown</h4>
+      <p>Built responsive UI using HTML, CSS, JavaScript, React. Worked on real-world frontend modules and implemented industry-level components.</p>
+      <span class="exp-duration">Apr 2024 – Jun 2024</span>
+    </div>
+
+    <div class="exp-card">
+      <h4>Python & AI Intern – Devtown</h4>
+      <p>Developed AI-based mini projects, automation scripts, and learned machine learning basics with hands-on training.</p>
+      <span class="exp-duration">Feb 2024 – Apr 2024</span>
+    </div>
+
+    <div class="exp-card">
+      <h4>Cryptography Intern</h4>
+      <p>Implemented classical and modern encryption techniques, hashing, key generation, and secure communication simulations.</p>
+      <span class="exp-duration">Jan 2024 – Mar 2024</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Projects -->
+<section class="projects anim" id="projects">
+  <h3 style="color:#fff">Projects</h3>
+
+  <div class="proj-list">
+
+    <!-- Secure Notes App -->
+    <div class="proj">
+      <h4>Secure Notes App</h4>
+      <p>Password-protected encrypted notes with auto delete.</p>
+      <div class="proj-links">
+        <a href="https://unisha0808.github.io/secure-notes-app/" class="proj-btn" target="_blank">🔗 Live Demo</a>
+        <a href="https://github.com/Unisha0808/secure-notes-app" class="proj-btn" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
+
+    <!-- Tic Tac Toe AI -->
+    <div class="proj">
+      <h4>Tic Tac Toe (AI)</h4>
+      <p>Minimax algorithm + 2 Players mode.</p>
+      <div class="proj-links">
+        <a href="https://unisha0808.github.io/tic-tac-toe-ai/" class="proj-btn" target="_blank">🔗 Live Demo</a>
+        <a href="https://github.com/Unisha0808/tic-tac-toe-ai" class="proj-btn" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
+
+    <!-- Hotstar Clone -->
+    <div class="proj">
+      <h4>Hotstar UI Clone</h4>
+      <p>Frontend media streaming UI.</p>
+      <div class="proj-links">
+        <a href="https://unisha0808.github.io/hotstar-clone/" class="proj-btn" target="_blank">🔗 Live Demo</a>
+        <a href="https://github.com/Unisha0808/hotstar-clone" class="proj-btn" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
+
+    <!-- Social Media Forensics -->
+    <div class="proj">
+      <h4>Social Media Forensics</h4>
+      <p>Mobile forensic analysis extracting WhatsApp, Instagram & Telegram artifacts from Android backups.</p>
+      <div class="proj-links">
+        <a href="#" class="proj-btn" target="_blank">🔗 Demo Video / Report</a>
+        <a href="https://github.com/GaneshDholi/digital-fornsic-android-extraction?utm_source=chatgpt.com" class="proj-btn" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
+
+    <!--Portfolio site-->
+    <div class="proj">
+        <h4>Portfolio Site</h4>
+        <p>This portfolio itself built with HTML, CSS, JS showcasing my skills & projects.</p>
+        <div class="proj-links">
+            <a href="https://unisha0808.github.io/portfolio/" class="proj-btn" target="_blank">🔗 Live Demo</a>
+            <a href="https://github.com/Unisha0808/portfolio" class="proj-btn" target="_blank">💻 GitHub</a>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Contact -->
+<section id="contact">
+  <h3>Contact Me</h3>
+  <p>Email: <a href="mailto:unishadaga08@gmail.com" style="color: #fff;">unishadaga08@gmail.com</a></p>
+</section>
+
+<footer>© 2025 Unisha Daga 🌷 All Rights Reserved</footer>
+
+</div>
+</body>
+</html>

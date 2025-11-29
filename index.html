@@ -4,7 +4,207 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unisha Daga | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 🌟 Global */
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #fff;
+  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  line-height: 1.6;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1, h2, h3 {
+  color: #00e0ff;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 🌟 Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  right: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  padding: 15px 0;
+  z-index: 1000;
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar a {
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.navbar a:hover {
+  color: #ffcc00;
+}
+.resume-btn {
+  background: #ff6600;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.resume-btn:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+/* 🌟 Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px; /* space for navbar */
+}
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.hero h1 span {
+  color: #ffcc00;   /* name highlight */
+  text-shadow: 0 0 15px #ffcc00; /* glowing effect */
+}
+.hero p {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+.hero-buttons {
+  margin-top: 20px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background: #ff6600;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* 🌟 Sections (boxed style) */
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+.section-box {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #00e0ff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,224,255,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.section-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,224,255,0.4);
+}
+
+/* 🌟 Skills list inside box */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.skills-list li {
+  background: #1a1a1a;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #00e0ff;
+  border: 1px solid #00e0ff;
+  transition: 0.3s;
+}
+.skills-list li:hover {
+  background: #00e0ff;
+  color: #0d0d0d;
+}
+
+/* 🌟 Project cards with buttons */
+.project-card {
+  background: #1a1a1a;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
+  transition: 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
+}
+.btn-group {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+.btn-live, .btn-github {
+  flex: 1;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-live {
+  background: #00e0ff;
+  color: #0d0d0d;
+}
+.btn-github {
+  background: #ff00ff;
+  color: #fff;
+}
+.btn-live:hover {
+  background: #00b5cc;
+}
+.btn-github:hover {
+  background: #cc00cc;
+}
+
+/* 🌟 Contact */
+#contact a {
+  color: #00e0ff;
+}
+#contact a:hover {
+  color: #ff00ff;
+}
+.btn-disabled {
+  padding: 10px 15px;
+  border-radius: 5px;
+  background: #444;
+  color: #bbb;
+  cursor: not-allowed;
+  font-weight: bold;
+}
+
+  </style>
 </head>
 <body>
   <!-- 🌟 Navigation Bar -->
@@ -60,7 +260,7 @@
       <h3>📱 Forensic Analysis of SMApps</h3>
       <p>Mobile forensic analysis extracting WhatsApp, Instagram & Telegram artifacts from Android backups.</p>
       <div class="btn-group">
-        <a href="https://github.com/GaneshDholi/digital-fornsic-android-extraction" target="_blank" class="btn-github">GitHub Repo</a>
+        <a href="https://github.com/GaneshDholi/digital-fornsic-android-extraction?utm_source=chatgpt.com" target="_blank" class="btn-github">GitHub Repo</a>
         <span class="btn-disabled">Live Demo Not Available</span>
       </div>
    </div>
@@ -132,7 +332,73 @@
     <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/unisha-daga-a46351297/" target="_blank">Unisha Daga</a></p>
     <p>💻 GitHub: <a href="https://github.com/Unisha0808" target="_blank">Unisha0808</a></p>
   </section>
+<script>
+// script.js
 
-  <script src="script.js"></script>
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+/* ---------------- 3D background (Three.js) ---------------- */
+      const container = document.getElementById("three-container");
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      const renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: true,
+      });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      container.appendChild(renderer.domElement);
+
+      const light = new THREE.PointLight(0xffffff, 1);
+      light.position.set(10, 10, 10);
+      scene.add(light);
+
+      const shapes = [];
+      for (let k = 0; k < 50; k++) {
+        const geometry =
+          Math.random() > 0.5
+            ? new THREE.BoxGeometry(1, 1, 1)
+            : new THREE.SphereGeometry(0.5, 16, 16);
+        const material = new THREE.MeshStandardMaterial({
+          color: Math.random() > 0.5 ? 0x00eaff : 0xff007c,
+          transparent: true,
+          opacity: 0.8,
+          metalness: 0.6,
+          roughness: 0.2,
+        });
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.position.set(
+          (Math.random() - 0.5) * 20,
+          (Math.random() - 0.5) * 20,
+          (Math.random() - 0.5) * 20
+        );
+        scene.add(mesh);
+        shapes.push({ mesh, speed: 0.001 + Math.random() * 0.003 });
+      }
+
+      camera.position.z = 10;
+      function animate() {
+        requestAnimationFrame(animate);
+        shapes.forEach((obj) => {
+          obj.mesh.rotation.x += obj.speed;
+          obj.mesh.rotation.y += obj.speed;
+        });
+        renderer.render(scene, camera);
+      }
+animate();
+</script>
 </body>
 </html>
